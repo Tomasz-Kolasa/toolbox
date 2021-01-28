@@ -1,0 +1,372 @@
+html, body
+{
+    height: 100%;
+}
+
+html, body, div, input, label
+{
+    box-sizing: border-box;
+}
+
+
+.full-height
+{
+    min-height: calc(100% - 8.5rem);
+}
+
+body
+{
+    transition: all .3s;
+}
+
+.row
+{
+    position: relative; /* needed for pseudo-headers */
+}
+
+.monospace
+{
+    font-family: monospace;
+}
+
+.unsigned-group input[type='text'], .signed-group input[type='text'],
+#caster .hex-group label, #caster .dec-group label
+{
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.input-field
+{
+    font-size: 1.5rem;
+    padding: .2em;
+}
+
+.row-inputs .col-input
+{
+    text-align: center;
+}
+
+.renumber-lines
+{
+    counter-reset: LCI;
+}
+
+.line-change-info>.col>form::before
+{
+    counter-increment: LCI;
+    content: counter(LCI) ":";
+    color: #D1D1D1;
+}
+
+@media screen and (max-width: 575px)
+{
+    .row-inputs .col-input
+    {
+        padding: .3em 0;
+    } 
+}
+
+@media screen and (min-width: 576px)
+{
+    .row-inputs > .col-input:first-of-type
+    {
+        text-align: right;
+    }
+
+    .row-inputs > .col-input:nth-of-type(2)
+    {
+        text-align: left;
+    }
+}
+
+/* define width for output fields */
+
+
+#HU8, #HS8
+{
+    width: 3rem;
+}
+#HU16, #HS16
+{
+    width: 5rem;
+}
+
+#HU32, #HS32
+{
+    width: 7rem;
+}
+
+#DU8, #DS8
+{
+    width: 3rem;
+}
+#DU16, #DS16
+{
+    width: 4rem;
+}
+#DU32, #DS32
+{
+    width: 7rem;
+}
+
+/* marks input that is currently converted */
+.input-field--active
+{
+    outline: .3em solid red;
+}
+
+.user-feedback
+{
+    margin-top: 1em;
+    min-height: 2em;
+}
+
+#fancy-c
+{
+    display: inline-block;
+    position: relative;
+    bottom: .1em;
+    right: .3em;
+    transform: scale(1.8,1.8) rotate(-15deg);
+    /* text-shadow: 1px 1px 2px currentColor; */
+}
+
+.bordered
+{
+    border: 1px solid currentColor;
+}
+
+.inputs
+{
+    position: relative;
+}
+
+.color-hex
+{
+    color: #8F55AF;
+}
+
+.color-dec
+{
+    color: #51B37C;
+}
+
+/* header set by JS, indicates format that numbers are displayed in */
+.pseudo-header--initial::before
+{
+    content: "output"; /* no values to display */
+}
+
+/* header set by JS, indicates format that numbers are displayed in */
+.pseudo-header--hex::before
+{
+    content: "hex output";
+    color: #8F55AF;
+}
+
+/* header set by JS, indicates format that numbers are displayed in */
+.pseudo-header--dec::before
+{
+    content: "dec output";
+    color: #51B37C;
+}
+
+.pseduo-header::before
+{
+    position: absolute;
+    z-index: 1;
+    font-size: 1em;
+    font-weight: 400;
+    top: -1.5em;
+    right: 3em;
+    /* text-shadow: 1px 1px 3px currentColor; */
+}
+
+.type-label
+{
+    position: relative;
+}
+
+/* JS toggled */
+.label-inverted::before
+{
+    content: "~";
+}
+
+.type-label::before
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -.8em;
+    /* text-shadow: 1px 1px 3px currentColor; */
+}
+
+.copied
+{
+    outline: 5px solid #00FF7F;
+    transition: outline .3s;
+}
+
+.footer
+{
+    border-top: 1px solid currentColor;
+}
+
+/*  page styler  */
+#input-number--hex
+{
+    border: 1px solid #8F55AF;
+}
+
+#input-number--dec
+{
+    border: 1px solid #51B37C;
+}
+
+.hex-group
+{
+    border-color: #8F55AF;
+    /* border: 1px solid #8F55AF; */
+}
+
+.dec-group
+{
+    border-color: #51B37C;
+    /* border: 1px solid #51B37C; */
+}
+
+.unsigned-group label::first-letter, .signed-group label::first-letter,
+.label-signed::first-letter, .label-unsigned::first-letter
+{
+    font-weight: bold;
+}
+
+.unsigned-group label::first-letter,
+.label-unsigned::first-letter
+{
+    color: red;
+}
+
+.signed-group label::first-letter,
+.label-signed::first-letter
+{
+    color: blue;
+}
+
+#radio-s:checked + label, #radio-u:checked + label
+{
+    text-decoration: underline;
+}
+
+.pointer, #inputs-form > div:first-of-type > input, #inputs-form > div:first-of-type > label
+{
+    cursor: pointer;
+}
+
+
+/*  Renumerator ----------------- */
+
+.tt-info
+{
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.plus-minus
+{
+    width: 2.5em;
+    height: 2.5em;
+    font-weight: bold;
+}
+
+a.tt-info:link
+{
+    color: #b1b1b1;
+}
+
+.renumerator-input::before, #renumerator-lines-box-output::before
+{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    color: gray;
+}
+.renumerator-input::before
+{
+    content: "Lines To Renumber";
+}
+#renumerator-lines-box-output::before
+{
+    content: "Renumbered Lines";
+    font-weight: initial;
+}
+
+.old-line
+{
+    border: 1px solid #f6c4ce;
+}
+.new-line
+{
+    border: 1px solid #bfe2e2;
+}
+.max-line
+{
+    border: 1px solid #ffe2bf;
+}
+
+#renumerator-lines-box-output
+{
+    min-height: 16rem;
+    background-color: #e9ecef;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.renumerator-info
+{
+    color: red;
+}
+
+.text_visibility-improved--white-background
+{
+    background-color: #fff;
+}
+
+.rhapsody__checker_inputs
+{
+    padding-bottom: 2em;
+}
+
+.rhapsody__checker_textarea
+{
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    min-height: 15em;
+    font-family: monospace;
+}
+
+.rhapsody__checker_textarea--rhapsody
+{
+    border-color: #8F55AF;
+}
+
+.rhapsody__checker_textarea--code
+{
+    border-color: #51B37C;
+}
+
+#rhapsody__dataModel
+{
+    word-wrap: break-word;
+}
+
+.rhapsody__comparer-labelName
+{
+    cursor: pointer;
+}

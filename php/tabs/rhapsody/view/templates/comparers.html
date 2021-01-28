@@ -1,0 +1,107 @@
+<div class="row rhapsody__comparer d-none" id="comparer-2columns">
+    <div class="col-md-6">
+        <textarea id="comparer-2columns__col1"
+            class="rhapsody__checker_textarea rhapsody__checker_textarea--rhapsody"></textarea>
+    </div>
+    <div class="col-md-6">
+        <textarea id="comparer-2columns__col2"
+            class="rhapsody__checker_textarea rhapsody__checker_textarea--code"></textarea>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <button id="rhapsody__checker--submit-button" type="submit" class="btn btn-success">Compare</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="row rhapsody__comparer no-gutters d-none" id="comparer-functions">
+    <div class="col">
+        <div class="row rhapsody__checker_inputs rhapsody__checker_inputs--rhapsody-inputs no-gutters">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>Rhapsody</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>variables Read</h4>
+                        <textarea id="comparer-functions--rhapsody-varsRead" class="rhapsody__checker_textarea rhapsody__checker_textarea--rhapsody"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>variables Write</h4>
+                        <textarea id="comparer-functions--rhapsody-varsWrite" class="rhapsody__checker_textarea rhapsody__checker_textarea--rhapsody"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>variables Read-Write</h4>
+                        <textarea id="comparer-functions--rhapsody-varsReadWrite" class="rhapsody__checker_textarea rhapsody__checker_textarea--rhapsody"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>used functions</h4>
+                        <textarea id="comparer-functions--rhapsody-usedFunctions" class="rhapsody__checker_textarea rhapsody__checker_textarea--rhapsody"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row rhapsody__checker_inputs rhapsody__checker_inputs--code-inputs no-gutters">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>Code</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>variables Read</h4>
+                        <textarea class="rhapsody__checker_textarea rhapsody__checker_textarea--code"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>variables Write</h4>
+                        <textarea class="rhapsody__checker_textarea rhapsody__checker_textarea--code"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>variables Read-Write</h4>
+                        <textarea class="rhapsody__checker_textarea rhapsody__checker_textarea--code"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>used functions</h4>
+                        <textarea class="rhapsody__checker_textarea rhapsody__checker_textarea--code"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-right">
+                        <button id="rhapsody__checker--submit-button" type="submit"
+                            class="btn btn-success">Compare</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row d-none rhapsody__comparer" id="comparer-checklist">
+    <div class="col">
+        <div class="row comparer-checklist__row py-1">
+            <div class="col-md-6">
+                <div class="form-check">
+                    <label class="form-check-label rhapsody__comparer-labelName" title="Arc_5_OS_pkg::MOD_SERV_PROG_FRAME">
+                        <input type="checkbox" class="rhapsody__comparer-labelName--ceheckbox form-check-input" value="">std_inc
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control form-control rhapsody__comparer-textInput">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/rhapsody/comparator__comparer-checklist.js"></script>
+
+
+<div class="row d-none rhapsody__comparer" id="comparer-listItems">
+    <div class="col">
+        <div id="comparer-listItems--container"></div>
+    </div>
+</div>
